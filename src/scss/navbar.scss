@@ -1,0 +1,66 @@
+// Основные стили навигационной панели
+.navbar {
+  // Внешний вид
+  background-color: rgb(7, 105, 185);
+  height: 50px;
+
+  // Расположение элементов
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  position: relative;
+
+  // Стили для списка навигации
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; // Выравнивание элементов по правому краю
+
+    // Стили для ссылок
+    a {
+      color: white;
+      font-size: 20px;
+      padding: 0 10px;
+      transition: color 0.3s ease; // Плавное изменение цвета при наведении
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.8); // Эффект при наведении
+      }
+    }
+  }
+}
+
+// Адаптивные стили
+// 1. Мобильные устройства и планшеты (до 1023px)
+@media (max-width: 1023px) {
+  .hamburger {
+    display: block;
+    z-index: 900;
+    position: fixed;
+  }
+
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Тень для выделения навбара
+  }
+}
+
+// 2. Десктопы (от 1024px)
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none; // Скрываем гамбургер-меню на десктопах
+  }
+
+  .navbar {
+    // Дополнительные стили для десктопной версии
+    ul {
+      li {
+        margin: 0 5px; // Добавляем отступы между элементами меню
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+// Импорт компонентных стилей
+@import "sidebar";
+@import "navbar";
+@import "footer";
+@import "catalog";
+
+// Глобальные сбросы стилей
+* {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Основное оформление страницы
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+// Основная структура страницы
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  position: relative;
+
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .catalog-section {
+      flex: 1;
+    }
+  }
+}
+
+// Стили для гамбургер-меню
+.hamburger {
+  a {
+    z-index: 900;
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+
+    // Управление видимостью иконок
+    .fa-xmark {
+      display: none; // Скрыта по умолчанию
+    }
+
+    .fa-bars {
+      display: block; // Видима по умолчанию
+    }
+  }
+
+  // Состояние при активном меню
+  &.active {
+    a {
+      .fa-xmark {
+        display: block; // Показываем крестик
+      }
+
+      .fa-bars {
+        display: none; // Скрываем бургер
+      }
+    }
+  }
+}
+
+// Медиа-запросы для адаптивности
+@media (max-width: 639px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none; // Скрываем гамбургер на десктопах
+  }
+}

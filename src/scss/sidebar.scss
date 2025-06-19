@@ -1,0 +1,122 @@
+.sidebar {
+  // Основные стили
+  background: rgb(5, 68, 104);
+  position: sticky;
+  top: 0;
+  width: 250px;
+  z-index: 800;
+  padding: 50px 0;
+
+  // Прокрутка и размеры
+  overflow-y: auto;
+  height: auto;
+  max-height: calc(100vh - var(--footer-height, 0px));
+
+  // Анимация
+  transition: all 0.3s ease;
+
+  // Стили для списка
+  ul {
+    width: 100%;
+
+    li a {
+      display: flex;
+      padding: 13px 30px;
+      border-bottom: 1px solid #10558d;
+      color: rgb(241, 237, 237);
+      font-size: 16px;
+      position: relative;
+
+      // Иконка внутри ссылки
+      .icon {
+        color: #dee4ec;
+        width: 30px;
+        display: inline-block;
+      }
+
+      // Эффекты при наведении
+      &:hover,
+      &:active {
+        color: #0c7db1;
+        background-color: white;
+        border-right: 2px solid rgb(5, 68, 104);
+
+        &::before {
+          display: block;
+        }
+
+        .icon {
+          color: #0c7db1;
+        }
+      }
+    }
+  }
+
+  // Стилизация скроллбара
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+// Класс для открытия сайдбара на мобильных устройствах
+.open {
+  display: flex !important;
+}
+
+// Анимация появления сайдбара
+@keyframes hamburgerAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Адаптивные стили
+// 1. Мобильные устройства (до 640px)
+@media (max-width: 639px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    animation: hamburgerAnimation 0.4s;
+  }
+}
+
+// 2. Планшеты (640px – 1023px)
+@media (min-width: 640px) and (max-width: 1023px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 40%;
+    display: none;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    animation: hamburgerAnimation 0.4s;
+  }
+}
+
+// 3-4. Десктопы (от 1024px)
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+  }
+}

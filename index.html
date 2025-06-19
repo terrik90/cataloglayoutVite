@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Каталог товаров с адаптивным дизайном" />
+    <title>Каталог товаров</title>
+  </head>
+  <body>
+    <!-- Основной контент -->
+    <main>
+      <!-- Боковое меню -->
+      <aside class="sidebar">
+        <ul>
+          <li>
+            <a href="#" aria-label="Главная страница">
+              <span class="icon"><i class="fa-solid fa-house"></i></span>
+              <span class="item">Главная</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Каталог товаров">
+              <span class="icon"><i class="fa-solid fa-table"></i></span>
+              <span class="item">Каталог</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Информация о доставке">
+              <span class="icon"><i class="fa-solid fa-truck"></i></span>
+              <span class="item">Доставка</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="О нас">
+              <span class="icon"><i class="fa-solid fa-info"></i></span>
+              <span class="item">О нас</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Кнопка гамбургер-меню для мобильных устройств -->
+      <div class="hamburger">
+        <a href="#" aria-label="Открыть/закрыть меню">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </a>
+      </div>
+
+      <!-- Основной контент страницы -->
+      <div class="content-wrapper">
+        <!-- Верхняя навигационная панель -->
+        <nav class="navbar">
+          <ul>
+            <li>
+              <a href="#" aria-label="Личный кабинет"
+                ><i class="fa-solid fa-circle-user"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" aria-label="Избранное"
+                ><i class="fa-solid fa-star"></i
+              ></a>
+            </li>
+            <li>
+              <a href="#" aria-label="Корзина"
+                ><i class="fa-solid fa-basket-shopping"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Контейнер для каталога товаров -->
+        <div class="container-catalog" aria-label="Каталог товаров">
+          <!-- Товары будут загружены через JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer>
+      <div class="footer-content">
+        <h3>What is lorem?</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+          necessitatibus perferendis blanditiis beatae accusamus, corporis quis
+          quidem nemo harum voluptatibus cupiditate, id illo, corrupti ad
+          voluptatum tempore dolores. Sit, eligendi!
+        </p>
+      </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <!-- Font Awesome для иконок -->
+    <script
+      src="https://kit.fontawesome.com/fc8727810b.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Основной JavaScript -->
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+// Контейнер для каталога товаров
+.container-catalog {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+}
+
+// Карточка товара
+.product {
+  width: 100%;
+  height: 450px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+
+  // Эффект при наведении
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // Контейнер для изображения
+  .image {
+    width: 100%;
+    height: 250px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Сохраняет пропорции изображения
+    }
+  }
+
+  // Информационный блок
+  .info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    // Заголовок товара
+    h3 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; // Обрезка длинных заголовков
+    }
+
+    // Описание товара
+    // Описание товара
+    p {
+      margin: 0;
+      flex-grow: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; // Изменено с 3 на 2 строки
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    // Блок с ценой и кнопкой
+    .info-price {
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // Стиль цены
+      .price {
+        font-size: 20px;
+        font-weight: bold;
+
+        small {
+          font-size: 14px;
+          font-weight: normal;
+        }
+      }
+
+      // Кнопка добавления в корзину
+      .add-to-cart {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: darken(#4caf50, 10%);
+        }
+      }
+    }
+  }
+}
+
+// Адаптивные стили
+// 1. Мобильные устройства (до 640px)
+@media (max-width: 639px) {
+  .container-catalog {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+    margin-top: 50px; // Отступ для навигации
+  }
+
+  .product {
+    height: 400px; // Уменьшенная высота для мобильных
+
+    .image {
+      height: 200px;
+    }
+
+    .info {
+      padding: 10px;
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .info-price {
+        margin-top: 70px;
+
+        .price {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+// 2. Планшеты (640px – 1023px)
+@media (min-width: 640px) and (max-width: 1023px) {
+  .container-catalog {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px; // Отступ для навигации
+  }
+}
+
+// 3. Маленькие десктопы (1024px – 1360px)
+@media (min-width: 1024px) and (max-width: 1360px) {
+  .container-catalog {
+    grid-template-columns: repeat(4, 1fr);
+    .info-price {
+      margin-top: 60px;
+    }
+  }
+}
+
+// 4. Большие десктопы (от 1361px)
+@media (min-width: 1361px) {
+  .container-catalog {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
