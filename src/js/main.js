@@ -66,13 +66,30 @@ document.addEventListener("DOMContentLoaded", loadAndDisplayProducts);
 // Обработчик изменения размера окна для адаптивности
 window.addEventListener("resize", loadAndDisplayProducts);
 
+let savedScrollPosition = 0;
+
 document.querySelector(".hamburger").addEventListener("click", function () {
   this.classList.toggle("active");
-  document.querySelector(".sidebar").classList.toggle("open");
+  const sidebar = document.querySelector(".sidebar");
+  const isOpening = !sidebar.classList.contains("open");
 
-  // Класс для блокировки скролла только на мобильных устройствах
   if (window.innerWidth <= 640) {
+    if (isOpening) {
+      // Сохраняем позицию прокрутки перед открытием меню
+      savedScrollPosition = window.scrollY;
+    }
+
+    sidebar.classList.toggle("open");
     document.body.classList.toggle("menu-open");
+
+    if (!isOpening) {
+      // Восстанавливаем позицию прокрутки после закрытия меню
+      setTimeout(() => {
+        window.scrollTo(0, savedScrollPosition);
+      }, 0);
+    }
+  } else {
+    sidebar.classList.toggle("open");
   }
 });
 
