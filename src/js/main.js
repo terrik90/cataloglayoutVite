@@ -69,4 +69,16 @@ window.addEventListener("resize", loadAndDisplayProducts);
 document.querySelector(".hamburger").addEventListener("click", function () {
   this.classList.toggle("active");
   document.querySelector(".sidebar").classList.toggle("open");
+
+  // Класс для блокировки скролла только на мобильных устройствах
+  if (window.innerWidth <= 640) {
+    document.body.classList.toggle("menu-open");
+  }
+});
+
+// Обработчик изменения размера окна для корректной работы блокировки скролла
+window.addEventListener("resize", function () {
+  if (window.innerWidth > 640) {
+    document.body.classList.remove("menu-open");
+  }
 });

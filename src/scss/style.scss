@@ -19,6 +19,18 @@ body {
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
+
+  &.menu-open {
+    @media (max-width: 640px) {
+      overflow: hidden;
+
+      .main-content {
+        .catalog-section {
+          overflow: hidden;
+        }
+      }
+    }
+  }
 }
 
 // Основная структура страницы
