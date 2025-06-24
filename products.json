@@ -3,31 +3,31 @@
     "name": "Товар 1",
     "description": "lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "price": 500,
-    "image": "https://placehold.co/300x400"
+    "image": "https://i.pinimg.com/736x/e4/43/19/e44319435bbd0021da54ea7c6f422dd8.jpg"
   },
   {
     "name": "Товар 2",
     "description": "Описание товара 2",
     "price": 750,
-    "image": "https://placehold.co/300x400"
+    "image": "https://avatars.mds.yandex.net/i?id=047ecc781ba577487e7373ac4d0d064d_l-10555888-images-thumbs&n=13"
   },
   {
     "name": "Товар 3",
     "description": "Описание товара 2",
     "price": 750,
-    "image": "https://placehold.co/300x400"
+    "image": "https://frankfurt.apollo.olxcdn.com/v1/files/90oobl9ybw093-KZ/image"
   },
   {
     "name": "Товар 4",
     "description": "Описание товара 2",
     "price": 750,
-    "image": "https://placehold.co/300x400"
+    "image": "https://avatars.mds.yandex.net/i?id=a1602d48fd925246981543b71ad01a27_l-3948343-images-thumbs&n=13"
   },
   {
     "name": "Товар 5",
     "description": "Описание товара 2",
     "price": 750,
-    "image": "https://placehold.co/300x400"
+    "image": "https://avatars.mds.yandex.net/i?id=364468f16daf28678947807e62021085_l-5338518-images-thumbs&n=13"
   },
   {
     "name": "Товар 6",
